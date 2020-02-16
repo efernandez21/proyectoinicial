@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="js/panzoom.js"></script>
+    <style>
+    </style>
+    <title>PruebaHci</title>
+    <script type="text/javascript" src="js/paper.js"></script>
+    <!-- Define inlined PaperScript associate it with myCanvas -->
+
+</head>
+<body>
+
+  <div class="panzoom-parent" style="border: solid blue 1px;">
+    <img id="primera" class="panzoom" src="img/radiografia3.jpg" alt="Imagen radiografia">
+  </div><br>
+<button onclick="()=> panzoom.reset()">boton</button>
+    
+  <script>
+      const imagen = document.getElementById('primera');
+      const panzoom = Panzoom(imagen, {
+          maxScale:3,
+        //   minScale:0.5,
+          contain: 'outside',
+          startScale:1.2,
+        //   startX:0,
+        //   startY:0,
+        //   disablePan:false,
+        //   panOnlyWhenZoomed:false,  //Desactiva la panoramica mientras la escala es igual al valor inicial
+          relative: true,
+        //   disableZoom:true
+      });
+      panzoom.pan(10, 10);
+      panzoom.zoom(1, { animate: false }); 
+      imagen.parentElement.addEventListener('wheel', panzoom.zoomWithWheel)
+      
+      
+      
+  </script>
+</body>
+</html>
+
+
+<!-- 
+const panzoom = Panzoom(elem, {
+    maxScale: 5,
+    minScale:1,
+   contain: 'outside',
+   setTransform: (elem, { scale, x, y }) => {
+   panzoom.setStyle('transform', `rotate(0turn) scale(${scale}) translate(${x}px, ${y}px)`)
+   },
+   
+   // startScale: 1.2
+ })
+ elem.parentElement.addEventListener('wheel', panzoom.zoomWithWheel) -->
+<!-- Probando el uso de imagenes en canvas -->
+<!-- <p>Image to use:</p>
+<img id="scream" src="img/radiografia2.jpg" alt="The Scream" width="800" height="600">
+
+<p>Canvas to fill:</p>
+<canvas id="myCanvas" width="800" height="600"
+style="border:1px solid #d3d3d3;">
+Tu navegador no soporta el canvas.</canvas>
+
+<p><button onclick="myCanvas()">Try it</button></p>
+
+<script>
+function myCanvas() {
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  var img = document.getElementById("scream");
+  
+  ctx.drawImage(img,10,10);
+  ctx.strokeStyle = "#FF0000";  /*Permite cambiar el color del stroke*/
+  ctx.moveTo(200,100);  //Establece el punto de inicio
+  ctx.lineTo(250,350);  //*Ancho de la linea y luego el alto es decir cordenadas (x,y)
+  ctx.stroke();
+}
+</script> -->

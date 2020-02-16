@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ -->
+	<!-- 1. Importar Librería de Galería FLICKITY-->
+	<!-- CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+	<!-- JavaScript -->
+	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+	<!-- 2. Importar Librería de Eventos PANZOOM -->
+	<!-- JavaScript -->
+	<script src='https://unpkg.com/panzoom@8.7.3/dist/panzoom.min.js'></script>
+
+	<style>
+		
+	</style>
+
+	<link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+	<title>Nexus Software</title>
+</head>
+<body>
+
+
+<!-- <div align="center"><h1>NEXUS SOFTWARE</h1></div> -->
+<div class="main-carousel" data-flickity='{lazyLoad: true, selectedAttraction: 0.01, friction: 0.30}'>
+
+  <div class="carousel-cell"><img src="https://as01.epimg.net/meristation/imagenes/2019/12/03/reportajes/1575329707_015803_1575375870_noticia_normal.jpg" class='zoomable'></div>
+<!--   <div class="carousel-cell"><img src="https://as01.epimg.net/meristation/imagenes/2019/12/03/reportajes/1575329707_015803_1575375870_noticia_normal.jpg"></div> -->
+  <div class="carousel-cell"><img src="https://as01.epimg.net/meristation/imagenes/2019/12/03/reportajes/1575329707_015803_1575375870_noticia_normal.jpg" class='zoomable2'></div>
+</div>
+
+
+    <footer>
+    Desarrollo por <a href='#'>NEXUS Soft</a>. <br />
+   </footer>
+
+
+
+
+<script id="rendered-js">
+function $(selector) {
+  return document.querySelector(selector);
+}
+
+var flkty = new Flickity('.main-carousel');
+$('.main-carousel').addEventListener('wheel', e => {
+
+  console.log(e.deltaX);
+  if (e.deltaX > 5) {
+    e.preventDefault();
+    flkty.next();
+  } else if (e.deltaX < -5) {
+    e.preventDefault();
+    flkty.previous();
+  }
+  console.log('hi');
+});
+//# sourceURL=pen.js
+    </script>
+
+     <script>
+var area = document.querySelector('.zoomable')
+var instance = panzoom(area, {
+  minZoom: 1
+});
+
+var area2 = document.querySelector('.zoomable2')
+var instance2 = panzoom(area2, {
+  minZoom: 1
+});
+    </script>
+</body>
+</html>

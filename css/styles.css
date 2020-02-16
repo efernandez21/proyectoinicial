@@ -1,0 +1,171 @@
+/**Globales**/
+/*Redefiniendo los rems*/
+html{
+    font-size: 62.5%;   /** Reset para REMS - 62.5% = 10px de 16 px**/
+}
+body {
+    font-family: "Lato", sans-serif;
+}
+
+/* Estilos de la galeria */
+*{ box-sizing: border-box; }
+
+/* body { font-family: sans-serif; } */
+
+.carousel {
+  background: #222;
+}
+
+.carousel-cell {
+  width: 100%;
+  height: 700px;
+
+  margin-right: 10px;
+  /* center images in cells with flexbox */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel.is-fullscreen .carousel-cell {
+  height: 100%;
+}
+
+.carousel-cell-image {
+  display: block;
+  max-height: 100%;
+}
+
+.carousel.is-fullscreen .carousel-cell-image {
+  max-width: 100%;
+}
+ 
+ .flickity-button {
+  background: transparent;
+}
+/* big previous & next buttons */
+.flickity-prev-next-button {
+  width: 100px;
+  height: 100px;
+}
+/* icon color */
+.flickity-button-icon {
+  fill: orange;
+}
+/* hide disabled button */
+.flickity-button:disabled {
+  display: none;
+}
+/*Trabajando con el SideBar*/
+/* El Menu sidebar */
+.sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 250px; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    display:block;
+    background-color: #4169E1; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 0.9rem; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+/* Boton activado en sidebar */
+.sidebar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+div.container-imagen {
+    text-align: right;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid blue;
+}
+  
+  /* Links del menu sidebar */
+  .sidebar a,p#bienvenida {
+    padding: 6px 6px 6px 30px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    text-align: center;
+  }
+  
+  /* Cuando se mueve el mouse alrededor del link, Cambian de color */
+  .sidebar a:hover {
+    color: black;
+    background-color: rgba(12, 226, 226, 0.767);
+  }
+  
+  /* Posicion y estilo del boton de cerrar (top right corner) */
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0.1rem;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 5.5rem;
+  }
+  
+  /* Boton usado para abrir el sidebar */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #3B83BD;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 1rem;
+    display: none; /*Con esta propiedad controlamos la aparicion del boton*/
+
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+  
+  /* Contenido de la página de estilo: use esto si desea empujar el contenido de la página hacia la derecha cuando abra la navegación lateral */
+  #main {
+    margin-left: 250px;
+    transition: margin-left .5s; /* If you want a transition effect */
+    padding: 20px;
+  }
+  
+  /* En pantallas más pequeñas, donde la altura es inferior a 450 px, cambie el estilo del sidenav (menos relleno y un tamaño de fuente más pequeño) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+
+/*Mis estilops*/
+h1 {
+   color: blue;
+   font-size: 1.2rem; 
+}
+#Logotipo{
+    height: 10rem;
+    width: 10rem;
+}
+.ayuda1{
+    height: 6rem;
+    width: 6rem;
+}
+.ayuda{
+    height: 3rem;
+    width: 3rem;
+}
+.container-button-menu h3{
+    padding: 0.5rem;
+    border-radius: 1rem;
+    /* border: solid blue 0.1rem ; */
+    /* margin-bottom: 0.1rem; */
+    display: block;
+    transition: 0.3s;
+    max-width: 1rem;
+    width:100%;
+    text-align: center;
+}
+
